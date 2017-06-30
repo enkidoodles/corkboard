@@ -1,0 +1,51 @@
+body{
+    background: url(https://washingtonarmscollectors.org/wp-content/uploads/2016/02/cork-board.jpg);
+}
+
+.note {
+	height: 300px;
+    width: 100%;
+	background: url(https://lh3.ggpht.com/YQTo-0hQ0ISjIZMnJPbl7C7FK52hWZfek5h0G4Zq7rwtemiZXwUJawghxsPQzu1KPJo=w300);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+
+.col-group {
+  overflow: hidden;
+}
+.col-group > div {
+  padding: 1em;
+}
+
+@media screen and (min-width: 44em) {
+  .col-group > div {
+    float: left;
+    width: 50%;
+  }
+  .col-group > div:nth-child(odd) {
+    clear: left;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .col-group > div {
+    float: left;
+    width: 33.3333333%;
+  }
+  .col-group > div:nth-child(3n+1) {
+    clear: left;
+  }
+  .col-group > div:nth-child(odd) {
+    clear: none;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .col-group > div {
+    width: 20%;
+  }
+  .col-group > div:nth-child(odd), .col-group > div:nth-child(3n+1) {
+    clear: none;
+  }
+}
+
