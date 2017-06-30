@@ -2,3 +2,12 @@
 <td><%= @branch.name %></td>
 <%= link_to 'Edit', edit_branch_path(@branch) %> |
 <%= link_to 'Back', branches_path %>
+<%= link_to "Add build.", new_branch_build_path(@branch) %><br>
+
+<% if @builds.blank? %>
+	<h3>No builds yet.</h3>
+<% else %>
+    <% @builds.each do |build| %>
+    	<%= build.name %><br>
+	<% end %>
+<% end %>

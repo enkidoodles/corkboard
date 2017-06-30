@@ -10,6 +10,7 @@ class BranchesController < ApplicationController
   # GET /branches/1
   # GET /branches/1.json
   def show
+    @builds = Build.where(branch_id: @branch.id)
   end
 
   # GET /branches/new
