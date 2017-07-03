@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   
   get 'pages/home'
   root 'pages#home'
+  
+  resources :builds, path_names: {
+    show: ''
+  }
+  
+  resources :users
 
   resources :builds, except: [:index]
   resources :branches do
