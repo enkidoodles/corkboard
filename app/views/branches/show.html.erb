@@ -7,6 +7,7 @@
 <% if @builds.blank? %>
 	<h3>No builds yet.</h3>
 <% else %>
+	<b>Builds</b><br>
     <% @builds.each do |build| %>
     	<%= build.name %><br>
 	<% end %>
