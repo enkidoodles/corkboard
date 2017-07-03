@@ -1,7 +1,12 @@
 require 'jenkins_api_client'
 
-@client = JenkinsApi::Client.new(:server_ip => 'localhost',
-         :username => 'enkidoodles', :password => 'patience')
+@client = JenkinsApi::Client.new(YAML.load_file(File.expand_path(
+  "../config.yml", __FILE__)))
+
+
+
+
+
 # The following call will return all jobs matching 'Testjob'
 
 
@@ -22,3 +27,7 @@ jobs.each do |i|
 	puts "result = #{details["result"]}";
 	
 end
+
+class BuildInfo
+
+end	
