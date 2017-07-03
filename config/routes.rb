@@ -3,12 +3,6 @@ Rails.application.routes.draw do
   
   get 'pages/home'
   root 'pages#home'
-  
-  resources :builds, path_names: {
-    show: ''
-  }
-
-  devise_for :users, controllers: { registrations: "registrations" }
 
   resources :builds, except: [:index]
   resources :branches do
