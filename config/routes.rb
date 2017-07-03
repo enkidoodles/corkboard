@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :builds, path_names: {
     show: ''
   }
+
+  devise_for :users, controllers: { registrations: "registrations" }
+
   resources :builds, except: [:index]
   resources :branches do
     resources :builds
