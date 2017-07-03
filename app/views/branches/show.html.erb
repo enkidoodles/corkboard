@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 <td><%= @branch.name %></td>
-<%= link_to 'Edit', edit_branch_path(@branch) %> |
-<%= link_to 'Back', branches_path %>
-<%= link_to "Add build.", new_branch_build_path(@branch) %><br>
+<%= link_to 'Edit branch', edit_branch_path(@branch) %> |
+<%= link_to 'Back', branches_path %> |
+<%= link_to "Add build to this branch", new_branch_build_path(@branch) %><br><br>
 
 <% if @builds.blank? %>
 	<h3>No builds yet.</h3>
 <% else %>
 	<b>Builds</b><br>
     <% @builds.each do |build| %>
-    	<%= build.name %><br>
+    	<%= build.name %>
+    	<%= link_to 'Edit', edit_branch_build_path(@branch, build) %> | 
+    	<%= link_to 'Destroy', build, method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
 <% end %>
+
+
