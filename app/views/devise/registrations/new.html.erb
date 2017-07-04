@@ -1,21 +1,26 @@
-<header>
-   <img class="logo" src="/nokiaLogo.png" alt="rss feed" />
-</header>
+<div class="row" id="header">
+  <div class="col-xs-6" id="logodiv">
+    <img id="logo" src="/nokiaLogo.png" alt="rss feed" />
+  </div>
+  <div class="col-xs-6" id="links">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
 
-<div class="jumbotron">
-  <div class="login">
+<div class="container-fluid" id="body">
+  <div class="jumbotron" id="login">
     <div class="inner">
       <center><h2>Sign up</h2></center>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
+        <div class="form-group">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true %>
         </div>
 
-        <div class="field">
+        <div class="form-group">
           <%= f.label :password %>
           <% if @minimum_password_length %>
           (<%= @minimum_password_length %> characters minimum)
@@ -23,17 +28,15 @@
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
 
-        <div class="field">
+        <div class="form-group">
           <%= f.label :password_confirmation %> 
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
 
-        <center><div class="actions">
-          <%= f.submit "Sign up" %>
+        <center><div class="form-check" id="signupbutton">
+          <%= f.submit "Sign up" , :class => "btn btn-secondary"%>
         </div></center>
       <% end %>
-
-      <center><%= render "devise/shared/links" %></center>
     </div>
   </div>
 </div>      
